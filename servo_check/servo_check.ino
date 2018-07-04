@@ -283,11 +283,55 @@ void dudeldum()
  delay(lays);
  delay(lays*5);
  }
-void hit(Servo servus, int start, int delayla, int ende)
+
+void Rauschrecord(int delayla)
 {
-  servus.write(ende);
   delay(delayla);
-  servus.write(start);
+  hit(C,0,C_delay,44);
+  delay(delayla);
+  hit(C,44,200,0);
+  
+  delay(delayla);
+  hit(D,0,200,44);
+  delay(delayla);
+  hit(D,44,200,0);
+  
+  delay(delayla);
+  hit(E,0,200,44);
+  hit(E,44,200,0);
+  
+  delay(delayla);
+  hit(F,0,200,44);
+  delay(delayla);
+  hit(F,44,200,0);
+  
+  delay(delayla);
+  hit(G,0,200,44);
+  delay(delayla);
+  hit(G,44,200,0);
+  
+  delay(delayla);
+  hit(A,0,200,44);
+  delay(delayla);
+  hit(A,44,200,0);
+  
+  delay(delayla);
+  hit(B,0,200,44);
+  delay(delayla);
+  hit(B,44,200,0);
+  
+  delay(delayla);
+  hit(Z,0,200,44);
+  delay(delayla);
+  hit(Z,44,200,0);
+
+}
+ 
+void hit(Servo servus, int startwinkel, int delayla, int endwinkel)
+{
+  servus.write(endwinkel);
+  delay(delayla);
+  servus.write(startwinkel);
 }
 void all(){
   C_hit();
@@ -308,7 +352,10 @@ void loop()
     init_all();
     ini = false;
   }
-  /*delay(1000);
+  //delay(1000);
+  
+  delay(1000);
+  /*
   A_hit();
   delay(1000);
   C_hit();
@@ -316,10 +363,12 @@ void loop()
   delay(2000);
   quick_init();
   delay(500);
+  */
   imp_march();
-  happy_birthday();*/
+  delay(2000);
+  //happy_birthday();
   delay(1000);
-  double_hit();
+  //double_hit();
 }
 
    
